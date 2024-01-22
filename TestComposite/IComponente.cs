@@ -8,5 +8,11 @@ namespace TestComposite
 {
     internal interface IComponente
     {
+        void add(IComponente cmp);
+        void remove(int ind);
+        void getChild(int ind);
+        string ToString();
+        bool Equals(object obj);
+        int CalcolaPunteggio();
     }
 }
