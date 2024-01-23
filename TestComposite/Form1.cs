@@ -14,10 +14,13 @@ namespace TestComposite
     {
         //dichiarazione
         Test test;
+        DomandaS ds;
 
         public Form1()
         {
+            //inizializzazione
             test = new Test();
+            ds = new DomandaS();
             InitializeComponent();
         }
 
@@ -50,6 +53,40 @@ namespace TestComposite
             {
                 listBox1.Items.Add(test.Componenti[i].ToString());
             }
+        }
+
+        private void creadomandads_Click(object sender, EventArgs e)
+        {
+            ds = new DomandaS(testods.Text);
+            MessageBox.Show("Domanda creata correttamente", "Informazione");
+        }
+
+        private void aggrispd_Click(object sender, EventArgs e)
+        {
+            if (ds.Testo != string.Empty)
+            {
+                ds.add(new Risposta(risptestods.Text, int.Parse(risppuntids.Text)));
+                MessageBox.Show("Risposta creata correttamente", "Informazione");
+            }
+            else
+            {
+                MessageBox.Show("Creare prima la domanda", "Errore");
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (ds.Testo != string.Empty)
+            {
+                test.add(ds);
+                AggiornaAnteprima();
+                MessageBox.Show("Domanda creata correttamente", "Informazione");
+            }
+            else
+            {
+                MessageBox.Show("Creare prima la domanda", "Errore");
+            }
+            ds = new DomandaS();
         }
     }
 }

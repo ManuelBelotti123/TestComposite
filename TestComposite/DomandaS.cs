@@ -14,16 +14,25 @@ namespace TestComposite
         {
             Testo = testo;
             Risposte = risposte;
+            NumElementi = risposte.Count;
+        }
+        public DomandaS(string testo) : base(testo)
+        {
+            Testo = testo;
+            Risposte = new List<Risposta>();
+            NumElementi = 0;
         }
         public DomandaS()
         {
             Testo = "";
             Risposte = new List<Risposta>();
+            NumElementi = 0;
         }
         public DomandaS(Domanda d)
         {
             Testo = d.Testo;
             Risposte = d.Risposte;
+            NumElementi = d.NumElementi;
         }
 
         //Equals
