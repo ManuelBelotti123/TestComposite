@@ -6,28 +6,20 @@ using System.Threading.Tasks;
 
 namespace TestComposite
 {
-    internal class Domanda : IComponente
+    internal class DomandaVF : Domanda
     {
-        //attributi
-        private string _testo;
-        private List<Risposta> _risposte;
-
-        //properties
-        public string Testo { get => _testo; set => _testo = value; }
-        public List<Risposta> Risposte { get => _risposte; set => _risposte = value; }
-        
         //costruttori
-        public Domanda(string testo, List<Risposta> risposte)
+        public DomandaVF(string testo, List<Risposta> risposte) : base(testo, risposte)
         {
             Testo = testo;
             Risposte = risposte;
         }
-        public Domanda()
+        public DomandaVF()
         {
             Testo = "";
             Risposte = new List<Risposta>();
         }
-        public Domanda(Domanda d)
+        public DomandaVF(Domanda d)
         {
             Testo = d.Testo;
             Risposte = d.Risposte;
@@ -36,9 +28,9 @@ namespace TestComposite
         //Equals
         public override bool Equals(object obj)
         {
-            return Equals(obj as Domanda);
+            return Equals(obj as DomandaVF);
         }
-        public bool Equals(Domanda d)
+        public bool Equals(DomandaVF d)
         {
             return Testo == d.Testo &&
                 Risposte == d.Risposte;
@@ -56,26 +48,14 @@ namespace TestComposite
         {
             return Testo + ";" + Risposte;
         }
-        
-        //metodi add, remove, getChild
-        public void add(IComponente cmp)
-        {
-            Risposte.Add((Risposta)cmp);
-        }
-        public void remove(int ind)
-        {
-            Risposte.RemoveAt(ind);
-        }
-        public void getChild(int ind)
-        {
-            Risposte.ElementAt(ind);
-        }
+
+        //metodi add, remove, getChild ereditati
 
         //metodo CalcolaPunteggio
-        public virtual int CalcolaPunteggio()
+        public override int CalcolaPunteggio()
         {
             //da aggiornare
-            return 1;
+            return 2;
         }
     }
 }
