@@ -47,7 +47,7 @@ namespace TestComposite
         //ToString
         public override string ToString()
         {
-            return Testo + ";" + Risposte;
+            return Testo;
         }
 
         //metodi add, remove, getChild ereditati

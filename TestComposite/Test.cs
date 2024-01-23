@@ -58,18 +58,25 @@ namespace TestComposite
         //ToString
         public override string ToString()
         {
-            return "Componenti: " + Componenti + "\n" +
-                "Numero elementi: " + NumElementi + "\n";
+            string str = string.Empty;
+            for (int i = 0; i < Componenti.Count; i++)
+            {
+                str += Componenti[i].ToString();
+       
+            }
+            return str;
         }
 
         //metodi add, remove, getChild
         public void add(IComponente cmp)
         {
             Componenti.Add(cmp);
+            NumElementi++;
         }
         public void remove(int ind)
         {
             Componenti.RemoveAt(ind);
+            NumElementi--;
         }
         public void getChild(int ind)
         {

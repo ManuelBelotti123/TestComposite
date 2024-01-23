@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TestComposite
 {
-    internal class Risposta
+    internal class Risposta : IComponente
     {
         //attributi
         private string _testo;
@@ -58,7 +58,7 @@ namespace TestComposite
         }
 
         //metodi add, remove, getChild
-        public void add(Risposta r)
+        public void add(IComponente r)
         {
             throw new NotImplementedException();
         }

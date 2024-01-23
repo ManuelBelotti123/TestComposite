@@ -14,6 +14,11 @@ namespace TestComposite
             Testo = testo;
             Risposte = risposte;
         }
+        public DomandaVF(string testo) : base(testo)
+        {
+            Testo = testo;
+            Risposte = new List<Risposta>();
+        }
         public DomandaVF()
         {
             Testo = "";
@@ -46,7 +51,7 @@ namespace TestComposite
         //ToString
         public override string ToString()
         {
-            return Testo + ";" + Risposte;
+            return Testo;
         }
 
         //metodi add, remove, getChild ereditati

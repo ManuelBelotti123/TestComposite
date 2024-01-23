@@ -31,27 +31,23 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabcontrol = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.aggrispf = new System.Windows.Forms.RadioButton();
+            this.aggrispv = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.testovf = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.button4 = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -61,6 +57,12 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.aggvf = new System.Windows.Forms.Button();
             this.tabcontrol.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -71,7 +73,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(12, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(196, 39);
             this.label1.TabIndex = 0;
@@ -90,11 +92,11 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.radioButton2);
-            this.tabPage1.Controls.Add(this.radioButton1);
+            this.tabPage1.Controls.Add(this.aggvf);
+            this.tabPage1.Controls.Add(this.aggrispf);
+            this.tabPage1.Controls.Add(this.aggrispv);
             this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.testovf);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -104,6 +106,66 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Vero o Falso";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // aggrispf
+            // 
+            this.aggrispf.AutoSize = true;
+            this.aggrispf.Location = new System.Drawing.Point(128, 171);
+            this.aggrispf.Name = "aggrispf";
+            this.aggrispf.Size = new System.Drawing.Size(50, 17);
+            this.aggrispf.TabIndex = 8;
+            this.aggrispf.TabStop = true;
+            this.aggrispf.Text = "Falso";
+            this.aggrispf.UseVisualStyleBackColor = true;
+            // 
+            // aggrispv
+            // 
+            this.aggrispv.AutoSize = true;
+            this.aggrispv.Location = new System.Drawing.Point(62, 171);
+            this.aggrispv.Name = "aggrispv";
+            this.aggrispv.Size = new System.Drawing.Size(47, 17);
+            this.aggrispv.TabIndex = 7;
+            this.aggrispv.TabStop = true;
+            this.aggrispv.Text = "Vero";
+            this.aggrispv.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(24, 142);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(216, 16);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Selezionare il valore della risposta:";
+            // 
+            // testovf
+            // 
+            this.testovf.Location = new System.Drawing.Point(27, 79);
+            this.testovf.Multiline = true;
+            this.testovf.Name = "testovf";
+            this.testovf.Size = new System.Drawing.Size(210, 40);
+            this.testovf.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(24, 53);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(189, 16);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Inserire il testo della domanda:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(20, 24);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(118, 24);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Vero o Falso";
             // 
             // tabPage2
             // 
@@ -124,121 +186,39 @@
             this.tabPage2.Text = "Singola";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // tabPage3
+            // button3
             // 
-            this.tabPage3.Controls.Add(this.button4);
-            this.tabPage3.Controls.Add(this.textBox5);
-            this.tabPage3.Controls.Add(this.label11);
-            this.tabPage3.Controls.Add(this.textBox6);
-            this.tabPage3.Controls.Add(this.button5);
-            this.tabPage3.Controls.Add(this.label12);
-            this.tabPage3.Controls.Add(this.textBox7);
-            this.tabPage3.Controls.Add(this.label13);
-            this.tabPage3.Controls.Add(this.label14);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(575, 316);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Multipla";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.button3.Location = new System.Drawing.Point(332, 158);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(199, 35);
+            this.button3.TabIndex = 20;
+            this.button3.Text = "Aggiungi risposta alla domanda";
+            this.button3.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // textBox4
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(19, 59);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(571, 24);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Scegliere la tipologia di domanda da creare tra le schede proposte:";
+            this.textBox4.Location = new System.Drawing.Point(32, 248);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(115, 20);
+            this.textBox4.TabIndex = 19;
             // 
-            // label3
+            // label10
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(20, 24);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(118, 24);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Vero o Falso";
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(31, 134);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(130, 16);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "Inserire una risposta:";
             // 
-            // label4
+            // textBox3
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(24, 53);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(189, 16);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Inserire il testo della domanda:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(27, 79);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(210, 40);
-            this.textBox1.TabIndex = 5;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(24, 142);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(216, 16);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Selezionare il valore della risposta:";
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(62, 171);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(47, 17);
-            this.radioButton1.TabIndex = 7;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Vero";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(128, 171);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(50, 17);
-            this.radioButton2.TabIndex = 8;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Falso";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(24, 218);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(213, 35);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Aggiungi domanda al test";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(608, 118);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(180, 316);
-            this.listBox1.TabIndex = 3;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(605, 96);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 16);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Anteprima test";
+            this.textBox3.Location = new System.Drawing.Point(34, 153);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(210, 40);
+            this.textBox3.TabIndex = 17;
             // 
             // button2
             // 
@@ -288,39 +268,25 @@
             this.label9.TabIndex = 10;
             this.label9.Text = "Domanda Risposta Singola";
             // 
-            // textBox3
+            // tabPage3
             // 
-            this.textBox3.Location = new System.Drawing.Point(34, 153);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(210, 40);
-            this.textBox3.TabIndex = 17;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(31, 134);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(130, 16);
-            this.label10.TabIndex = 18;
-            this.label10.Text = "Inserire una risposta:";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(32, 248);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(115, 20);
-            this.textBox4.TabIndex = 19;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(332, 158);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(199, 35);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "Aggiungi risposta alla domanda";
-            this.button3.UseVisualStyleBackColor = true;
+            this.tabPage3.Controls.Add(this.label15);
+            this.tabPage3.Controls.Add(this.button4);
+            this.tabPage3.Controls.Add(this.textBox5);
+            this.tabPage3.Controls.Add(this.label11);
+            this.tabPage3.Controls.Add(this.textBox6);
+            this.tabPage3.Controls.Add(this.button5);
+            this.tabPage3.Controls.Add(this.label12);
+            this.tabPage3.Controls.Add(this.textBox7);
+            this.tabPage3.Controls.Add(this.label13);
+            this.tabPage3.Controls.Add(this.label14);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(575, 316);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Multipla";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
@@ -394,11 +360,76 @@
             this.label13.TabIndex = 22;
             this.label13.Text = "Inserire il testo della domanda:";
             // 
+            // label14
+            // 
+            this.label14.Location = new System.Drawing.Point(0, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(100, 23);
+            this.label14.TabIndex = 30;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(19, 59);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(571, 24);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Scegliere la tipologia di domanda da creare tra le schede proposte:";
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(608, 118);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(180, 316);
+            this.listBox1.TabIndex = 3;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(605, 96);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(92, 16);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Anteprima test";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(25, 23);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(237, 24);
+            this.label15.TabIndex = 31;
+            this.label15.Text = "Domanda Risposta Multipla";
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(632, 16);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(156, 41);
+            this.button6.TabIndex = 11;
+            this.button6.Text = "Prova Test";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // aggvf
+            // 
+            this.aggvf.Location = new System.Drawing.Point(24, 232);
+            this.aggvf.Name = "aggvf";
+            this.aggvf.Size = new System.Drawing.Size(213, 35);
+            this.aggvf.TabIndex = 17;
+            this.aggvf.Text = "Aggiungi domanda al test";
+            this.aggvf.UseVisualStyleBackColor = true;
+            this.aggvf.Click += new System.EventHandler(this.aggvf_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label2);
@@ -428,11 +459,10 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton aggrispf;
+        private System.Windows.Forms.RadioButton aggrispv;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox testovf;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button3;
@@ -455,6 +485,9 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button aggvf;
     }
 }
 

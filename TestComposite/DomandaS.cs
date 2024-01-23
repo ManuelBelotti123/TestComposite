@@ -29,9 +29,9 @@ namespace TestComposite
         //Equals
         public override bool Equals(object obj)
         {
-            return Equals(obj as DomandaVF);
+            return Equals(obj as DomandaS);
         }
-        public bool Equals(DomandaVF d)
+        public bool Equals(DomandaS d)
         {
             return Testo == d.Testo &&
                 Risposte == d.Risposte;
@@ -47,7 +47,7 @@ namespace TestComposite
         //ToString
         public override string ToString()
         {
-            return Testo + ";" + Risposte;
+            return Testo;
         }
 
         //metodi add, remove, getChild ereditati
