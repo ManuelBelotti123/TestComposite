@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domanda.cs" />
+    <Compile Include="DomandaM.cs" />
     <Compile Include="DomandaS.cs" />
     <Compile Include="DomandaVF.cs" />
     <Compile Include="Form1.cs">
