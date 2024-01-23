@@ -49,13 +49,13 @@
             this.label9 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label15 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.aggrispdm = new System.Windows.Forms.Button();
+            this.rispostapuntidm = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.rispostatestodm = new System.Windows.Forms.TextBox();
+            this.aggdomandam = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.testodm = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -64,6 +64,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.aggrispd = new System.Windows.Forms.Button();
             this.creadomandads = new System.Windows.Forms.Button();
+            this.creadomandam = new System.Windows.Forms.Button();
             this.tabcontrol.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -293,14 +294,15 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.creadomandam);
             this.tabPage3.Controls.Add(this.label15);
-            this.tabPage3.Controls.Add(this.button4);
-            this.tabPage3.Controls.Add(this.textBox5);
+            this.tabPage3.Controls.Add(this.aggrispdm);
+            this.tabPage3.Controls.Add(this.rispostapuntidm);
             this.tabPage3.Controls.Add(this.label11);
-            this.tabPage3.Controls.Add(this.textBox6);
-            this.tabPage3.Controls.Add(this.button5);
+            this.tabPage3.Controls.Add(this.rispostatestodm);
+            this.tabPage3.Controls.Add(this.aggdomandam);
             this.tabPage3.Controls.Add(this.label12);
-            this.tabPage3.Controls.Add(this.textBox7);
+            this.tabPage3.Controls.Add(this.testodm);
             this.tabPage3.Controls.Add(this.label13);
             this.tabPage3.Controls.Add(this.label14);
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
@@ -323,23 +325,24 @@
             this.label15.TabIndex = 31;
             this.label15.Text = "Domanda Risposta Multipla";
             // 
-            // button4
+            // aggrispdm
             // 
-            this.button4.Location = new System.Drawing.Point(494, 246);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(298, 54);
-            this.button4.TabIndex = 29;
-            this.button4.Text = "Aggiungi risposta alla domanda";
-            this.button4.UseVisualStyleBackColor = true;
+            this.aggrispdm.Location = new System.Drawing.Point(494, 246);
+            this.aggrispdm.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.aggrispdm.Name = "aggrispdm";
+            this.aggrispdm.Size = new System.Drawing.Size(298, 54);
+            this.aggrispdm.TabIndex = 29;
+            this.aggrispdm.Text = "Aggiungi risposta alla domanda";
+            this.aggrispdm.UseVisualStyleBackColor = true;
+            this.aggrispdm.Click += new System.EventHandler(this.aggrispdm_Click);
             // 
-            // textBox5
+            // rispostapuntidm
             // 
-            this.textBox5.Location = new System.Drawing.Point(44, 385);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(170, 26);
-            this.textBox5.TabIndex = 28;
+            this.rispostapuntidm.Location = new System.Drawing.Point(44, 385);
+            this.rispostapuntidm.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rispostapuntidm.Name = "rispostapuntidm";
+            this.rispostapuntidm.Size = new System.Drawing.Size(170, 26);
+            this.rispostapuntidm.TabIndex = 28;
             // 
             // label11
             // 
@@ -352,24 +355,26 @@
             this.label11.TabIndex = 27;
             this.label11.Text = "Inserire una risposta:";
             // 
-            // textBox6
+            // rispostatestodm
             // 
-            this.textBox6.Location = new System.Drawing.Point(46, 238);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(313, 59);
-            this.textBox6.TabIndex = 26;
+            this.rispostatestodm.Location = new System.Drawing.Point(46, 238);
+            this.rispostatestodm.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rispostatestodm.Multiline = true;
+            this.rispostatestodm.Name = "rispostatestodm";
+            this.rispostatestodm.Size = new System.Drawing.Size(313, 59);
+            this.rispostatestodm.TabIndex = 26;
+            this.rispostatestodm.TextChanged += new System.EventHandler(this.rispostatestodm_TextChanged);
             // 
-            // button5
+            // aggdomandam
             // 
-            this.button5.Location = new System.Drawing.Point(494, 362);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(298, 54);
-            this.button5.TabIndex = 25;
-            this.button5.Text = "Aggiungi domanda al test";
-            this.button5.UseVisualStyleBackColor = true;
+            this.aggdomandam.Location = new System.Drawing.Point(494, 362);
+            this.aggdomandam.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.aggdomandam.Name = "aggdomandam";
+            this.aggdomandam.Size = new System.Drawing.Size(298, 54);
+            this.aggdomandam.TabIndex = 25;
+            this.aggdomandam.Text = "Aggiungi domanda al test";
+            this.aggdomandam.UseVisualStyleBackColor = true;
+            this.aggdomandam.Click += new System.EventHandler(this.aggdomandam_Click);
             // 
             // label12
             // 
@@ -383,14 +388,14 @@
             this.label12.Text = "Inserire il punteggio della risposta:\r\n(se <=0 allora errata, altrimenti corretta" +
     ")";
             // 
-            // textBox7
+            // testodm
             // 
-            this.textBox7.Location = new System.Drawing.Point(46, 126);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(313, 59);
-            this.textBox7.TabIndex = 23;
+            this.testodm.Location = new System.Drawing.Point(46, 126);
+            this.testodm.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.testodm.Multiline = true;
+            this.testodm.Name = "testodm";
+            this.testodm.Size = new System.Drawing.Size(313, 59);
+            this.testodm.TabIndex = 23;
             // 
             // label13
             // 
@@ -475,6 +480,17 @@
             this.creadomandads.UseVisualStyleBackColor = true;
             this.creadomandads.Click += new System.EventHandler(this.creadomandads_Click);
             // 
+            // creadomandam
+            // 
+            this.creadomandam.Location = new System.Drawing.Point(494, 126);
+            this.creadomandam.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.creadomandam.Name = "creadomandam";
+            this.creadomandam.Size = new System.Drawing.Size(298, 54);
+            this.creadomandam.TabIndex = 32;
+            this.creadomandam.Text = "Crea domanda";
+            this.creadomandam.UseVisualStyleBackColor = true;
+            this.creadomandam.Click += new System.EventHandler(this.creadomandam_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -525,13 +541,12 @@
         private System.Windows.Forms.TextBox testods;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button aggrispdm;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox rispostatestodm;
+        private System.Windows.Forms.Button aggdomandam;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox testodm;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ListBox listBox1;
@@ -541,6 +556,8 @@
         private System.Windows.Forms.Button aggvf;
         private System.Windows.Forms.Button aggrispd;
         private System.Windows.Forms.Button creadomandads;
+        private System.Windows.Forms.Button creadomandam;
+        private System.Windows.Forms.TextBox rispostapuntidm;
     }
 }
 
