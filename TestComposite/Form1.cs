@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace TestComposite
 {
@@ -129,6 +130,92 @@ namespace TestComposite
                 MessageBox.Show("Creare prima la domanda", "Errore");
             }
             dm = new DomandaM();
+        }
+
+        private void provatest_Click(object sender, EventArgs e)
+        {
+            int posX = 50;
+            int posY = 70;
+            Form2 f2 = new Form2();
+            for (int i = 0; i < test.Componenti.Count; i++)
+            {
+                //titolo test
+                Label titolo = new Label();
+                titolo.Text = "Test Anteprima";
+                titolo.Font = new Font("Arial", 20);
+                titolo.AutoSize = true;
+                titolo.Location = new System.Drawing.Point(10, 20);
+                f2.Controls.Add(titolo);
+                //domanda
+                if (test.Componenti[i] is DomandaVF)
+                {
+                    //aggiunta domanda
+                    DomandaVF dmn = (DomandaVF)test.Componenti[i];
+                    Label l = new Label();
+                    l.Text = dmn.Testo;
+                    l.Location = new System.Drawing.Point(posX, posY);
+                    f2.Controls.Add(l);
+                    //aggiunta groupBox
+                    GroupBox groupBox = new GroupBox();
+                    groupBox.Text = string.Empty;
+                    groupBox.Location = new System.Drawing.Point(posX, posY + 20);
+                    f2.Controls.Add(groupBox);
+                    //aggiunta risposte nel groupBox
+                    for (int j = 0; j < dmn.Risposte.Count; j++)
+                    {
+                        RadioButton r = new RadioButton();
+                        r.Text = dmn.Risposte[j].Testo;
+                        r.Location = new System.Drawing.Point(10, 20 + ((j + 1) * 20));
+                        groupBox.Controls.Add(r);
+                    }
+                    posY += 150;
+                }
+                else if (test.Componenti[i] is DomandaS)
+                {
+                    DomandaS dmn = (DomandaS)test.Componenti[i];
+                    Label l = new Label();
+                    l.Text = dmn.Testo;
+                    l.Location = new System.Drawing.Point(posX, posY);
+                    f2.Controls.Add(l);
+                    //aggiunta groupBox
+                    GroupBox groupBox = new GroupBox();
+                    groupBox.Text = string.Empty;
+                    groupBox.Location = new System.Drawing.Point(posX, posY + 20);
+                    f2.Controls.Add(groupBox);
+                    for (int j = 0; j < dmn.Risposte.Count; j++)
+                    {
+                        RadioButton r = new RadioButton();
+                        r.Text = dmn.Risposte[j].Testo;
+                        r.AutoCheck = false;
+                        //r.Click += rbClick;
+                        r.Location = new System.Drawing.Point(10, 20 + ((j + 1) * 20));
+                        groupBox.Controls.Add(r);
+                    }
+                    posY += 50 * dmn.Risposte.Count;
+                }
+                else if (test.Componenti[i] is DomandaM)
+                {
+                    DomandaM dmn = (DomandaM)test.Componenti[i];
+                    Label l = new Label();
+                    l.Text = dmn.Testo;
+                    l.Location = new System.Drawing.Point(posX, posY);
+                    f2.Controls.Add(l);
+                    //aggiunta groupBox
+                    GroupBox groupBox = new GroupBox();
+                    groupBox.Text = string.Empty;
+                    groupBox.Location = new System.Drawing.Point(posX, posY + 20);
+                    f2.Controls.Add(groupBox);
+                    for (int j = 0; j < dmn.Risposte.Count; j++)
+                    {
+                        CheckBox r = new CheckBox();
+                        r.Text = dmn.Risposte[j].Testo;
+                        r.Location = new System.Drawing.Point(10, 20 + ((j + 1) * 20));
+                        groupBox.Controls.Add(r);
+                    }
+                    posY += 50 * dmn.Risposte.Count;
+                }
+            }
+            f2.Show();
         }
     }
 }

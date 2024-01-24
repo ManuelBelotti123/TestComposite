@@ -61,7 +61,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
+            this.provatest = new System.Windows.Forms.Button();
             this.aggrispd = new System.Windows.Forms.Button();
             this.creadomandads = new System.Windows.Forms.Button();
             this.creadomandam = new System.Windows.Forms.Button();
@@ -448,15 +448,16 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Anteprima test";
             // 
-            // button6
+            // provatest
             // 
-            this.button6.Location = new System.Drawing.Point(948, 25);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(234, 63);
-            this.button6.TabIndex = 11;
-            this.button6.Text = "Prova Test";
-            this.button6.UseVisualStyleBackColor = true;
+            this.provatest.Location = new System.Drawing.Point(948, 25);
+            this.provatest.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.provatest.Name = "provatest";
+            this.provatest.Size = new System.Drawing.Size(234, 63);
+            this.provatest.TabIndex = 11;
+            this.provatest.Text = "Prova Test";
+            this.provatest.UseVisualStyleBackColor = true;
+            this.provatest.Click += new System.EventHandler(this.provatest_Click);
             // 
             // aggrispd
             // 
@@ -496,7 +497,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 692);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.provatest);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label2);
@@ -552,7 +553,7 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button provatest;
         private System.Windows.Forms.Button aggvf;
         private System.Windows.Forms.Button aggrispd;
         private System.Windows.Forms.Button creadomandads;
