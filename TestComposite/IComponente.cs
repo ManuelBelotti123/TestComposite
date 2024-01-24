@@ -13,6 +13,6 @@ namespace TestComposite
         void getChild(int ind);
         string ToString();
         bool Equals(object obj);
-        int CalcolaPunteggio();
+        int CalcolaPunteggio(List<List<string>> lstr);
     }
 }

@@ -60,7 +60,7 @@ namespace TestComposite
         //metodi add, remove, getChild ereditati
 
         //metodo CalcolaPunteggio
-        public override int CalcolaPunteggio()
+        public override int CalcolaPunteggio(List<List<string>> lstr)
         {
             //da aggiornare
             return 2;

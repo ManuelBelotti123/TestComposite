@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,6 +20,8 @@ namespace TestComposite
         Test test;
         DomandaS ds;
         DomandaM dm;
+        Form2 f2;
+        List<GroupBox> grb;
 
         public Form1()
         {
@@ -24,6 +29,8 @@ namespace TestComposite
             test = new Test();
             ds = new DomandaS();
             dm = new DomandaM();
+            f2 = new Form2();
+            grb = new List<GroupBox>();
             InitializeComponent();
         }
 
@@ -134,9 +141,9 @@ namespace TestComposite
 
         private void provatest_Click(object sender, EventArgs e)
         {
+            f2 = new Form2();
             int posX = 50;
             int posY = 70;
-            Form2 f2 = new Form2();
             for (int i = 0; i < test.Componenti.Count; i++)
             {
                 //titolo test
@@ -151,14 +158,11 @@ namespace TestComposite
                 {
                     //aggiunta domanda
                     DomandaVF dmn = (DomandaVF)test.Componenti[i];
-                    Label l = new Label();
-                    l.Text = dmn.Testo;
-                    l.Location = new System.Drawing.Point(posX, posY);
-                    f2.Controls.Add(l);
                     //aggiunta groupBox
                     GroupBox groupBox = new GroupBox();
-                    groupBox.Text = string.Empty;
+                    groupBox.Text = dmn.Testo;
                     groupBox.Location = new System.Drawing.Point(posX, posY + 20);
+                    groupBox.AutoSize = true;
                     f2.Controls.Add(groupBox);
                     //aggiunta risposte nel groupBox
                     for (int j = 0; j < dmn.Risposte.Count; j++)
@@ -166,6 +170,7 @@ namespace TestComposite
                         RadioButton r = new RadioButton();
                         r.Text = dmn.Risposte[j].Testo;
                         r.Location = new System.Drawing.Point(10, 20 + ((j + 1) * 20));
+                        grb.Add(groupBox);
                         groupBox.Controls.Add(r);
                     }
                     posY += 150;
@@ -173,22 +178,18 @@ namespace TestComposite
                 else if (test.Componenti[i] is DomandaS)
                 {
                     DomandaS dmn = (DomandaS)test.Componenti[i];
-                    Label l = new Label();
-                    l.Text = dmn.Testo;
-                    l.Location = new System.Drawing.Point(posX, posY);
-                    f2.Controls.Add(l);
                     //aggiunta groupBox
                     GroupBox groupBox = new GroupBox();
-                    groupBox.Text = string.Empty;
+                    groupBox.Text = dmn.Testo;
                     groupBox.Location = new System.Drawing.Point(posX, posY + 20);
+                    groupBox.AutoSize = true;
                     f2.Controls.Add(groupBox);
                     for (int j = 0; j < dmn.Risposte.Count; j++)
                     {
                         RadioButton r = new RadioButton();
                         r.Text = dmn.Risposte[j].Testo;
-                        r.AutoCheck = false;
-                        //r.Click += rbClick;
                         r.Location = new System.Drawing.Point(10, 20 + ((j + 1) * 20));
+                        grb.Add(groupBox);
                         groupBox.Controls.Add(r);
                     }
                     posY += 50 * dmn.Risposte.Count;
@@ -196,26 +197,70 @@ namespace TestComposite
                 else if (test.Componenti[i] is DomandaM)
                 {
                     DomandaM dmn = (DomandaM)test.Componenti[i];
-                    Label l = new Label();
-                    l.Text = dmn.Testo;
-                    l.Location = new System.Drawing.Point(posX, posY);
-                    f2.Controls.Add(l);
                     //aggiunta groupBox
                     GroupBox groupBox = new GroupBox();
-                    groupBox.Text = string.Empty;
+                    groupBox.Text = dmn.Testo;
                     groupBox.Location = new System.Drawing.Point(posX, posY + 20);
+                    groupBox.AutoSize = true;
                     f2.Controls.Add(groupBox);
                     for (int j = 0; j < dmn.Risposte.Count; j++)
                     {
-                        CheckBox r = new CheckBox();
-                        r.Text = dmn.Risposte[j].Testo;
-                        r.Location = new System.Drawing.Point(10, 20 + ((j + 1) * 20));
-                        groupBox.Controls.Add(r);
+                        CheckBox c = new CheckBox();
+                        c.Text = dmn.Risposte[j].Testo;
+                        c.Location = new System.Drawing.Point(10, 20 + ((j + 1) * 20));
+                        grb.Add(groupBox);
+                        groupBox.Controls.Add(c);
                     }
                     posY += 50 * dmn.Risposte.Count;
                 }
             }
+            posY += 100;
+            Button b = new Button();
+            b.Text = "Invia";
+            b.Location = new System.Drawing.Point(posX, posY);
+            b.Click += invia_Click;
+            f2.Controls.Add(b);
             f2.Show();
+        }
+
+        public void invia_Click(object sender, EventArgs e)
+        {
+            List<List<string>> rispdate = new List<List<string>>();
+            for (int i = 0; i < grb.Count; i++)
+            {
+                rispdate.Add(new List<string>());
+            }
+            for (int i = 0; i < grb.Count; i++)
+            {
+                for (int j = 0; j < grb[i].Controls.Count; j++)
+                {
+                    if (grb[i].Controls[j] is RadioButton)
+                    {
+                        RadioButton r = (RadioButton)grb[i].Controls[j];
+                        if (r.Checked)
+                        {
+                            rispdate[i].Add(r.Text);
+                        }
+                        else
+                        {
+                            rispdate[i].Add("*");
+                        }
+                    }
+                    else if (grb[i].Controls[j] is CheckBox)
+                    {
+                        CheckBox c = (CheckBox)grb[i].Controls[j];
+                        if (c.Checked)
+                        {
+                            rispdate[i].Add(c.Text);
+                        }
+                        else
+                        {
+                            rispdate[i].Add("*");
+                        }
+                    }
+                }
+            }
+            MessageBox.Show(Text = "Punteggio: " + test.CalcolaPunteggio(rispdate), "Informazione");
         }
     }
 }

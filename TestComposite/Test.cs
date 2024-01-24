@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -84,12 +85,19 @@ namespace TestComposite
         }
 
         //metodo CalcolaPunteggio
-        public int CalcolaPunteggio()
+        public int CalcolaPunteggio(List<List<string>> rispdate)
         {
             int punteggio = 0;
-            foreach (IComponente cmp in Componenti)
+            for (int i = 0; i < Componenti.Count; i++)
             {
-                punteggio += cmp.CalcolaPunteggio();
+                Domanda dmn = (Domanda)Componenti[i];
+                for (int j = 0; j < dmn.Risposte.Count; j++)
+                {
+                    if (dmn.Risposte[j].Testo == rispdate[i][j])
+                    {
+                        punteggio += dmn.Risposte[j].Punti;
+                    }
+                }
             }
             return punteggio;
         }

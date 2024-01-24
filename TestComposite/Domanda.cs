@@ -85,10 +85,16 @@ namespace TestComposite
         }
 
         //metodo CalcolaPunteggio
-        public virtual int CalcolaPunteggio()
+        public virtual int CalcolaPunteggio(List<List<string>> lstr)
         {
-            //da aggiornare
-            return 1;
+            for (int i = 0; i < Risposte.Count; i++)
+            {
+                if (Risposte[i].Punti > 0)
+                {
+                    return Risposte[i].Punti;
+                }
+            }
+            return 0;
         }
     }
 }

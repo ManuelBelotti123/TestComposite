@@ -72,7 +72,7 @@ namespace TestComposite
         }
 
         //metodo CalcolaPunteggio
-        public int CalcolaPunteggio()
+        public int CalcolaPunteggio(List<List<string>> lstr)
         {
             return Punti; //da aggiornare
         }

@@ -39,6 +39,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.creadomandads = new System.Windows.Forms.Button();
+            this.aggrispd = new System.Windows.Forms.Button();
             this.risppuntids = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.risptestods = new System.Windows.Forms.TextBox();
@@ -48,6 +50,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.creadomandam = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.aggrispdm = new System.Windows.Forms.Button();
             this.rispostapuntidm = new System.Windows.Forms.TextBox();
@@ -62,9 +65,6 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label6 = new System.Windows.Forms.Label();
             this.provatest = new System.Windows.Forms.Button();
-            this.aggrispd = new System.Windows.Forms.Button();
-            this.creadomandads = new System.Windows.Forms.Button();
-            this.creadomandam = new System.Windows.Forms.Button();
             this.tabcontrol.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -210,6 +210,28 @@
             this.tabPage2.Text = "Singola";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // creadomandads
+            // 
+            this.creadomandads.Location = new System.Drawing.Point(498, 123);
+            this.creadomandads.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.creadomandads.Name = "creadomandads";
+            this.creadomandads.Size = new System.Drawing.Size(298, 54);
+            this.creadomandads.TabIndex = 22;
+            this.creadomandads.Text = "Crea domanda";
+            this.creadomandads.UseVisualStyleBackColor = true;
+            this.creadomandads.Click += new System.EventHandler(this.creadomandads_Click);
+            // 
+            // aggrispd
+            // 
+            this.aggrispd.Location = new System.Drawing.Point(498, 252);
+            this.aggrispd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.aggrispd.Name = "aggrispd";
+            this.aggrispd.Size = new System.Drawing.Size(298, 54);
+            this.aggrispd.TabIndex = 21;
+            this.aggrispd.Text = "Aggiungi risposta alla domanda";
+            this.aggrispd.UseVisualStyleBackColor = true;
+            this.aggrispd.Click += new System.EventHandler(this.aggrispd_Click);
+            // 
             // risppuntids
             // 
             this.risppuntids.Location = new System.Drawing.Point(48, 382);
@@ -313,6 +335,17 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Multipla";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // creadomandam
+            // 
+            this.creadomandam.Location = new System.Drawing.Point(494, 126);
+            this.creadomandam.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.creadomandam.Name = "creadomandam";
+            this.creadomandam.Size = new System.Drawing.Size(298, 54);
+            this.creadomandam.TabIndex = 32;
+            this.creadomandam.Text = "Crea domanda";
+            this.creadomandam.UseVisualStyleBackColor = true;
+            this.creadomandam.Click += new System.EventHandler(this.creadomandam_Click);
             // 
             // label15
             // 
@@ -458,39 +491,6 @@
             this.provatest.Text = "Prova Test";
             this.provatest.UseVisualStyleBackColor = true;
             this.provatest.Click += new System.EventHandler(this.provatest_Click);
-            // 
-            // aggrispd
-            // 
-            this.aggrispd.Location = new System.Drawing.Point(498, 252);
-            this.aggrispd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.aggrispd.Name = "aggrispd";
-            this.aggrispd.Size = new System.Drawing.Size(298, 54);
-            this.aggrispd.TabIndex = 21;
-            this.aggrispd.Text = "Aggiungi risposta alla domanda";
-            this.aggrispd.UseVisualStyleBackColor = true;
-            this.aggrispd.Click += new System.EventHandler(this.aggrispd_Click);
-            // 
-            // creadomandads
-            // 
-            this.creadomandads.Location = new System.Drawing.Point(498, 123);
-            this.creadomandads.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.creadomandads.Name = "creadomandads";
-            this.creadomandads.Size = new System.Drawing.Size(298, 54);
-            this.creadomandads.TabIndex = 22;
-            this.creadomandads.Text = "Crea domanda";
-            this.creadomandads.UseVisualStyleBackColor = true;
-            this.creadomandads.Click += new System.EventHandler(this.creadomandads_Click);
-            // 
-            // creadomandam
-            // 
-            this.creadomandam.Location = new System.Drawing.Point(494, 126);
-            this.creadomandam.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.creadomandam.Name = "creadomandam";
-            this.creadomandam.Size = new System.Drawing.Size(298, 54);
-            this.creadomandam.TabIndex = 32;
-            this.creadomandam.Text = "Crea domanda";
-            this.creadomandam.UseVisualStyleBackColor = true;
-            this.creadomandam.Click += new System.EventHandler(this.creadomandam_Click);
             // 
             // Form1
             // 
