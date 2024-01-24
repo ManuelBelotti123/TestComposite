@@ -59,8 +59,7 @@ namespace TestComposite
         //metodo CalcolaPunteggio
         public override int CalcolaPunteggio(List<List<string>> lstr)
         {
-            //da aggiornare
-            return 2;
+            throw new NotImplementedException();
         }
     }
 }

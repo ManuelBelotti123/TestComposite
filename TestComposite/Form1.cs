@@ -144,15 +144,15 @@ namespace TestComposite
             f2 = new Form2();
             int posX = 50;
             int posY = 70;
+            //titolo test
+            Label titolo = new Label();
+            titolo.Text = "Test Anteprima";
+            titolo.Font = new Font("Arial", 20);
+            titolo.AutoSize = true;
+            titolo.Location = new System.Drawing.Point(10, 20);
+            f2.Controls.Add(titolo);
             for (int i = 0; i < test.Componenti.Count; i++)
             {
-                //titolo test
-                Label titolo = new Label();
-                titolo.Text = "Test Anteprima";
-                titolo.Font = new Font("Arial", 20);
-                titolo.AutoSize = true;
-                titolo.Location = new System.Drawing.Point(10, 20);
-                f2.Controls.Add(titolo);
                 //domanda
                 if (test.Componenti[i] is DomandaVF)
                 {
@@ -164,18 +164,18 @@ namespace TestComposite
                     groupBox.Location = new System.Drawing.Point(posX, posY + 20);
                     groupBox.AutoSize = true;
                     f2.Controls.Add(groupBox);
+                    grb.Add(groupBox);
                     //aggiunta risposte nel groupBox
                     for (int j = 0; j < dmn.Risposte.Count; j++)
                     {
                         RadioButton r = new RadioButton();
                         r.Text = dmn.Risposte[j].Testo;
                         r.Location = new System.Drawing.Point(10, 20 + ((j + 1) * 20));
-                        grb.Add(groupBox);
                         groupBox.Controls.Add(r);
                     }
                     posY += 150;
                 }
-                else if (test.Componenti[i] is DomandaS)
+                if (test.Componenti[i] is DomandaS)
                 {
                     DomandaS dmn = (DomandaS)test.Componenti[i];
                     //aggiunta groupBox
@@ -184,15 +184,16 @@ namespace TestComposite
                     groupBox.Location = new System.Drawing.Point(posX, posY + 20);
                     groupBox.AutoSize = true;
                     f2.Controls.Add(groupBox);
+                    grb.Add(groupBox);
+                    //risposte
                     for (int j = 0; j < dmn.Risposte.Count; j++)
                     {
                         RadioButton r = new RadioButton();
                         r.Text = dmn.Risposte[j].Testo;
                         r.Location = new System.Drawing.Point(10, 20 + ((j + 1) * 20));
-                        grb.Add(groupBox);
                         groupBox.Controls.Add(r);
                     }
-                    posY += 50 * dmn.Risposte.Count;
+                    posY += 170;
                 }
                 else if (test.Componenti[i] is DomandaM)
                 {
@@ -203,12 +204,12 @@ namespace TestComposite
                     groupBox.Location = new System.Drawing.Point(posX, posY + 20);
                     groupBox.AutoSize = true;
                     f2.Controls.Add(groupBox);
+                    grb.Add(groupBox);
                     for (int j = 0; j < dmn.Risposte.Count; j++)
                     {
                         CheckBox c = new CheckBox();
                         c.Text = dmn.Risposte[j].Testo;
                         c.Location = new System.Drawing.Point(10, 20 + ((j + 1) * 20));
-                        grb.Add(groupBox);
                         groupBox.Controls.Add(c);
                     }
                     posY += 50 * dmn.Risposte.Count;
@@ -226,6 +227,7 @@ namespace TestComposite
         public void invia_Click(object sender, EventArgs e)
         {
             List<List<string>> rispdate = new List<List<string>>();
+            rispdate.Clear();
             for (int i = 0; i < grb.Count; i++)
             {
                 rispdate.Add(new List<string>());
